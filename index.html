@@ -12,6 +12,21 @@
     </div>
     
     <script>
+        Date.prototype.Format = function (fmt) { //author: meizz 
+        var o = {
+            "M+": this.getMonth() + 1, //月份 
+            "d+": this.getDate(), //日 
+            "h+": this.getHours(), //小时 
+            "m+": this.getMinutes(), //分 
+            "s+": this.getSeconds(), //秒 
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+            "S": this.getMilliseconds() //毫秒 
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        };
         var data = `
                     永外、望坛、宝华里、永外城、百荣、天天家园、富莱茵、景泰、李村、杨家园、北京南站、革新里、管村、蒲黄榆、清真寺、一师附小、永定门、
                     龙潭、龙潭湖、龙潭公园、龙潭中湖、龙潭湖体育产业园、光明楼、百工坊、板厂小学、左安门角楼、左安漪园、北京市少年宫、龙潭庙会、幸福家园、
@@ -31,10 +46,12 @@
                     和平里、地坛、青年湖、柳荫公园、民旺、航星园、五中、一七一中、安德路、黄寺、上龙西里、三利、紫阙华庭、
                     `
         data = data.split('、');
-
+        var date = new Date();
+        var now = (new Date()).Format("yyyy-MM-dd-hh");
+        var old = (new Date(new Date().getTime()- 24*60*60*1000)).Format("yyyy-MM-dd-hh");
         var html = '';
         data.map(d=>{
-            html+=`<a href="https://s.weibo.com/weibo?q=${d}&wvr=6&b=1&Refer=SWeibo_box" target="_blank">${d}</a> &nbsp;`
+            html+=`<a href="https://s.weibo.com/weibo?q=${d}&typeall=1&suball=1&timescope=custom:${old}:${now}&Refer=SWeibo_box" target="_blank">${d}</a> &nbsp;`
         });
 
         var elem = document.getElementsByClassName("parent")[0];
