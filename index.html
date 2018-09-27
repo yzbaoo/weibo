@@ -10,7 +10,7 @@
     <div class="parent">
         
     </div>
-    
+    <div class="parent2"></div>
     <script>
         Date.prototype.Format = function (fmt) { //author: meizz 
         var o = {
@@ -43,8 +43,8 @@
                     东华门、王府井、北京饭店、南河沿、东交民巷、正义路、台基厂、皇史宬、劳动人民文化宫、故宫、百货大楼、新东安、妇产医院、韶九、报房胡同、
                     景山、北河沿、沙滩、中老胡同、西老胡同、黄化门街、五四大街、故宫角楼、首都剧场、中国美术馆、皇城根、人艺、景山学校、银闸、隆福、三联、钱粮胡同、育群胡同、中医医院、嵩祝寺、智珠寺、吉安所、北大红楼、毛泽东旧居、三眼井、中法大学、
                     交道口、南锣、茅盾故居、帽儿胡同、雨儿胡同、鼓楼、钟楼、安定门、圆恩寺、玉河、菊儿胡同、中戏、北兵马司、蓑衣、福祥、鼓楼中医院　
-                    和平里、地坛、青年湖、柳荫公园、民旺、航星园、五中、一七一中、安德路、黄寺、上龙西里、三利、紫阙华庭、东城区、东四十二条
-                    `
+                    和平里、地坛、青年湖、柳荫公园、民旺、航星园、五中、一七一中、安德路、黄寺、上龙西里、三利、紫阙华庭、东城区、东四十二条、王家园、光明楼、春秀路
+                    `;
         data = data.split('、');
         var date = new Date();
         var now = (new Date(new Date().getTime()+1*60*60*1000)).Format("yyyy-MM-dd-hh");
@@ -56,6 +56,14 @@
 
         var elem = document.getElementsByClassName("parent")[0];
         elem.innerHTML = html;
+        
+        var data2 = `北京东城、东城、东城区、东城街道、北京南站、北京站`;
+        var html2 = '';
+        data2.map(d=>{
+            html2+=`<a href="https://s.weibo.com/weibo?q=${d}&typeall=1&suball=1&timescope=custom:${old}:${now}&Refer=SWeibo_box" target="_blank">${d}</a> &nbsp;`;
+        });
+        var elem2 = document.getElementsByClassName("parent2")[0];
+        elem2.innerHTML = html;
     </script>
 </body>
 </html>
