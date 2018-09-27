@@ -59,6 +59,7 @@
         
         var data2 = `北京东城、东城、东城区、东城街道、北京南站、北京站`;
         var html2 = '';
+        data2 = data2.split('、');
         data2.map(d=>{
             html2+=`<a href="https://s.weibo.com/weibo?q=${d}&typeall=1&suball=1&timescope=custom:${old}:${now}&Refer=SWeibo_box" target="_blank">${d}</a> &nbsp;`;
         });
