@@ -64,6 +64,10 @@
         });
         var elem2 = document.getElementsByClassName("parent2")[0];
         elem2.innerHTML = "<b>高频词:</b>"+html2;
+        
+        setIntval(function(){
+            location.reload();
+        },1000);
     </script>
 </body>
 </html>
