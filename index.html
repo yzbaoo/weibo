@@ -7,10 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="parent">
-        
-    </div>
     <div class="parent2"></div>
+    <div class="parent"></div>
+    
     <script>
         Date.prototype.Format = function (fmt) { //author: meizz 
         var o = {
@@ -28,7 +27,7 @@
             return fmt;
         };
         var data = `
-                    永外、望坛、宝华里、永外城、百荣、天天家园、富莱茵、景泰、李村、杨家园、北京南站、革新里、管村、蒲黄榆、清真寺、一师附小、永定门、
+                    永外、望坛、宝华里、永外城、百荣、天天家园、富莱茵、景泰、李村、杨家园、革新里、管村、蒲黄榆、清真寺、一师附小、永定门、
                     龙潭、龙潭湖、龙潭公园、龙潭中湖、龙潭湖体育产业园、光明楼、百工坊、板厂小学、左安门角楼、左安漪园、北京市少年宫、龙潭庙会、幸福家园、
                     体育馆路、崇外六号地、法华寺、红桥市场、国家体育总局、幸福北里、幸福南里、南护城河、长青园、天雅、四块玉、
                     天坛、天坛公园、天坛医院、金鱼池、祈年大街、自然博物馆、天坛西门、简易楼、大都市街、两广大街、天坛体育场、东侧路、中轴、
@@ -57,7 +56,7 @@
         var elem = document.getElementsByClassName("parent")[0];
         elem.innerHTML = html;
         
-        var data2 = `北京东城、东城、东城区、东城街道、北京南站、北京站`;
+        var data2 = `北京东城、东城、东城区、东城街道、北京站`;
         var html2 = '';
         data2 = data2.split('、');
         data2.map(d=>{
